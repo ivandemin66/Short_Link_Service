@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6d17821-abb0-48e9-a450-ff178b1ccc00" name="Changes" comment="Создание требуемых для работы приложения классов.">
-      <change afterPath="$PROJECT_DIR$/.idea/amplicode-jpa.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InMemoryLinkRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LinkData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LinkRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ShortLinkApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ShortLinkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c6d17821-abb0-48e9-a450-ff178b1ccc00" name="Changes" comment="Добавление необходимых классов и интерфейсов. Добавление функционала программы.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortLinkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shortenerUrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UrlShortener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/urlShort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LinkData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinkData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShortLinkApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortLinkApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortLinkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShortLinkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortLinkService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ShortLinkApp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -64,6 +59,20 @@
     "onboarding.tips.debug.path": "C:/Users/idevi/Desktop/javaProjects/Short_Link_Service/src/Main.java"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="ShortLinkApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ShortLinkApp" />
+      <module name="Short_Link_Service" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ShortLinkApp" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -81,11 +90,20 @@
       <option name="project" value="LOCAL" />
       <updated>1732258878356</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавление необходимых классов и интерфейсов. Добавление функционала программы.">
+      <option name="closed" value="true" />
+      <created>1732893552273</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732893552273</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Создание требуемых для работы приложения классов." />
-    <option name="LAST_COMMIT_MESSAGE" value="Создание требуемых для работы приложения классов." />
+    <MESSAGE value="Добавление необходимых классов и интерфейсов. Добавление функционала программы." />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление необходимых классов и интерфейсов. Добавление функционала программы." />
   </component>
 </project>

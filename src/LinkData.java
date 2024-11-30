@@ -8,7 +8,7 @@ public class LinkData {
     private final UUID userUUID;
     private int clickCount;
 
-    public LinkData(String originalUrl, int maxClicks, LocalDateTime expiryTime, UUID UserUUID, UUID userUUID, int clickCount) {
+    public LinkData(String originalUrl, int maxClicks, LocalDateTime expiryTime, UUID userUUID) {
         this.originalUrl = originalUrl;
         this.maxClicks = maxClicks;
         this.expiryTime = expiryTime;
@@ -24,7 +24,7 @@ public class LinkData {
         return LocalDateTime.now().isAfter(expiryTime);
     }
 
-    public boolean IsMaxClicksReached () {
+    public boolean isMaxClicksReached () {
         return clickCount >= maxClicks;
     }
 
