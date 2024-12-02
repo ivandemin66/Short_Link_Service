@@ -3,7 +3,7 @@ import java.util.UUID;
 
 public class LinkData {
     private final String originalUrl;
-    private final int maxClicks;
+    private int maxClicks;
     private final LocalDateTime expiryTime;
     private final UUID userUUID;
     private int clickCount;
@@ -34,5 +34,9 @@ public class LinkData {
 
     public UUID getUserUUID() {
         return userUUID;
+    }
+
+    public void setMaxClicks(int newClicks) {
+        this.maxClicks = newClicks;
     }
 }

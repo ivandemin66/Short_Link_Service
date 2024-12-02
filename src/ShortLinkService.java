@@ -1,6 +1,4 @@
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 class ShortLinkService {
@@ -10,12 +8,14 @@ class ShortLinkService {
         this.repository = repository;
     }
 
-    public String createShortLink(String userId, String originalUrl, int maxClicks) {
-        String shortLink = generateShortLink();
+    public LinkResponce createShortLink(String userId, String originalUrl, int maxClicks) {
+
         UUID userUUID = UUID.fromString(userId);
+        String shortLink = generateShortLink();
+
         LinkData linkData = new LinkData(originalUrl, maxClicks, LocalDateTime.now().plusDays(1), userUUID);
         repository.saveLink(shortLink, linkData);
-        return shortLink;
+        return new LinkResponce(shortLink, userUUID);
     }
 
     public String redirect(String shortLink) throws Exception {
@@ -42,5 +42,18 @@ class ShortLinkService {
 
     private String generateShortLink() {
         return "clck.ru/" + UUID.randomUUID().toString().substring(0, 6);
+    }
+
+    public void changeUser(String newUserId) {
+
+    }
+
+    public boolean updateLinkParams(String shortLink, String userId, int newClicks) {
+        LinkData linkData = repository.findLink(shortLink);
+        if (linkData!= null && linkData.getUserUUID().toString().equals(userId)) {
+            linkData.setMaxClicks(newClicks);
+            return true;
+        }
+        return false;
     }
 }

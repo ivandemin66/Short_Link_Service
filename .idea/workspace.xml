@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6d17821-abb0-48e9-a450-ff178b1ccc00" name="Changes" comment="Добавление необходимых классов и интерфейсов. Добавление функционала программы.">
+    <list default="true" id="c6d17821-abb0-48e9-a450-ff178b1ccc00" name="Changes" comment="Дополнение основного функционала. Еще не весь функционал реализован.">
+      <change afterPath="$PROJECT_DIR$/src/ValidationUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LinkData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinkData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShortLinkApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortLinkApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortLinkController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShortLinkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortLinkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UrlShortener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinkResponce.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -98,12 +100,21 @@
       <option name="project" value="LOCAL" />
       <updated>1732893552273</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Дополнение основного функционала. Еще не весь функционал реализован.">
+      <option name="closed" value="true" />
+      <created>1732979670055</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732979670055</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Создание требуемых для работы приложения классов." />
     <MESSAGE value="Добавление необходимых классов и интерфейсов. Добавление функционала программы." />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление необходимых классов и интерфейсов. Добавление функционала программы." />
+    <MESSAGE value="Дополнение основного функционала. Еще не весь функционал реализован." />
+    <option name="LAST_COMMIT_MESSAGE" value="Дополнение основного функционала. Еще не весь функционал реализован." />
   </component>
 </project>
