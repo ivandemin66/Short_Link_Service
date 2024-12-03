@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6d17821-abb0-48e9-a450-ff178b1ccc00" name="Changes" comment="Дополнение основного функционала. Еще не весь функционал реализован.">
-      <change afterPath="$PROJECT_DIR$/src/ValidationUser.java" afterDir="false" />
+    <list default="true" id="c6d17821-abb0-48e9-a450-ff178b1ccc00" name="Changes" comment="Добавление нового класса ValidationUser.java. Обновление существующих методов. Улучшение функциональности приложения. Устранение некоторых ошибок, приводивших к закрытию приложения.">
+      <change afterPath="$PROJECT_DIR$/src/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LinkData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinkData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShortLinkApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortLinkApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortLinkController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShortLinkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortLinkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UrlShortener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinkResponce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ValidationUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ValidationUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,13 +107,22 @@
       <option name="project" value="LOCAL" />
       <updated>1732979670055</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Добавление нового класса ValidationUser.java. Обновление существующих методов. Улучшение функциональности приложения. Устранение некоторых ошибок, приводивших к закрытию приложения.">
+      <option name="closed" value="true" />
+      <created>1733161318871</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733161318871</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Создание требуемых для работы приложения классов." />
     <MESSAGE value="Добавление необходимых классов и интерфейсов. Добавление функционала программы." />
     <MESSAGE value="Дополнение основного функционала. Еще не весь функционал реализован." />
-    <option name="LAST_COMMIT_MESSAGE" value="Дополнение основного функционала. Еще не весь функционал реализован." />
+    <MESSAGE value="Добавление нового класса ValidationUser.java. Обновление существующих методов. Улучшение функциональности приложения. Устранение некоторых ошибок, приводивших к закрытию приложения." />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление нового класса ValidationUser.java. Обновление существующих методов. Улучшение функциональности приложения. Устранение некоторых ошибок, приводивших к закрытию приложения." />
   </component>
 </project>

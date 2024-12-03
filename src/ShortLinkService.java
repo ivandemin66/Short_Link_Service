@@ -1,15 +1,16 @@
 import java.time.LocalDateTime;
 import java.util.UUID;
+import java.util.*;
 
 class ShortLinkService {
     private final LinkRepository repository;
+
 
     public ShortLinkService(LinkRepository repository) {
         this.repository = repository;
     }
 
     public LinkResponce createShortLink(String userId, String originalUrl, int maxClicks) {
-
         UUID userUUID = UUID.fromString(userId);
         String shortLink = generateShortLink();
 
@@ -33,6 +34,7 @@ class ShortLinkService {
             repository.deleteLink(shortLink);
             return true;
         }
+
         return false;
     }
 
@@ -44,16 +46,30 @@ class ShortLinkService {
         return "clck.ru/" + UUID.randomUUID().toString().substring(0, 6);
     }
 
-    public void changeUser(String newUserId) {
-
+    public void changeUser(UUID newUserId) {
     }
 
-    public boolean updateLinkParams(String shortLink, String userId, int newClicks) {
+
+    public boolean updateLinkParams(String shortLink, String userId, int newClicks, int expiryMinutes) {
         LinkData linkData = repository.findLink(shortLink);
-        if (linkData!= null && linkData.getUserUUID().toString().equals(userId)) {
+        if (linkData != null && linkData.getUserUUID().toString().equals(userId)) {
+            // Устанавливаем максимальное количество кликов
             linkData.setMaxClicks(newClicks);
+
+            // Рассчитываем новое время жизни
+            LocalDateTime requestedExpiryTime = LocalDateTime.now().plusMinutes(expiryMinutes);
+
+            // Устанавливаем минимальное значение времени жизни между конфигурацией и пользовательским вводом
+            LocalDateTime finalExpiryTime = requestedExpiryTime.isBefore(Config.getMaxExpiryTime())
+                    ? requestedExpiryTime
+                    : Config.getMaxExpiryTime();
+            linkData.setExpiryTime(finalExpiryTime);
+
             return true;
         }
         return false;
     }
+
+
+
 }

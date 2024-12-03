@@ -4,17 +4,27 @@ public class ValidationUser {
             return false;
         }
 
+        if (originalUrl.length() > 300) {
+            return false;
+        }
+
+
         // Проверяем, что строка не состоит только из цифр
         if (originalUrl.matches("\\d+")) {
             return false;
         }
 
+        String urlRegex = "^https://.*";
+        if (!originalUrl.matches(urlRegex)) {
+            return false;
+        }
         return !originalUrl.trim().isEmpty();
     }
 
-    public static boolean isValidClickLimit(int clickThroughLimit) {
-        return clickThroughLimit >= 1 && clickThroughLimit <= 100;
+    public static boolean isValidClickLimit(int clicks) {
+        return clicks > 0 && clicks <= Config.getMaxClicks();
     }
+
 
     public static boolean isValidUUID(String userID) {
         if (userID == null || userID.trim().isEmpty()) {
@@ -37,21 +47,15 @@ public class ValidationUser {
 
     }
 
-    // Если создан 1й ID без короткой ссылки (пустой), то нельзя следом создать новый
-    public static boolean isValidEmptyID () {
-    return true;
-    }
+    public static boolean isValidCorrectShortUrl (String shortLink) {
+        if (shortLink.length() < 10) {
+            return false;
+        }
 
-    // Метод сравнения соотношения одного ID (если у 1го ID не привязаны кор. ссылки)
-    //    // с другим 2ID (у него привязаны ссылки), чтобы к пустому 1ID не привязывалась ссылка
-    //    // от второго ID
-    public static boolean isValidRatioUrlOrID () {
-    return true;
-    }
-
-    // Сопоставление двух ID, чтобы один не имел возможности переписать второй
-    public  static boolean isValidRatioID () {
-        return true;
+        if (shortLink.trim().isEmpty()) {
+            return false;
+        }
+            return shortLink.startsWith("clck.ru/") && shortLink.length() > 10;
     }
 
 }

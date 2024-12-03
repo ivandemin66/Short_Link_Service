@@ -1,3 +1,4 @@
+import java.time.LocalDateTime;
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -72,7 +73,7 @@ public class ShortLinkController {
         if (ValidationUser.isValidLink(originalUrl)) {
             System.out.println("Ссылка валидна.");
         } else {
-            System.out.println("Ссылка недействительна. Она должна быть длиной не менее 10 символов и не состоять только из цифр.");
+            System.out.println("Ссылка недействительна. Она должна быть длиной не менее 10 символов,\nсодержать правильные символы и не состоять только из цифр.");
             return;
         }
 
@@ -116,37 +117,56 @@ public class ShortLinkController {
         }
     }
 
+
     private void changeParams() {
         System.out.println("Введите свой ID: ");
         String userId = scanner.nextLine();
-        if (ValidationUser.isValidUUID(userId)) {
-            System.out.println("Вы ввели корректный ID");
-        } else {
+        if (!ValidationUser.isValidUUID(userId)) {
             System.out.println("Вы ввели неподдерживаемый ID. Введите правильный ID");
             return;
         }
+
         System.out.println("Введите короткую ссылку: ");
         String shortLink = scanner.nextLine();
-        System.out.println("Установите новое максимальное количество кликов: ");
-        int newClicks = Integer.parseInt(scanner.nextLine());
-
-        if (service.updateLinkParams(shortLink, userId, newClicks)) {
-            System.out.println("Параметры ссылки успешно обновлены!");
-        } else {
-            System.out.println("Не удалось обновить параметры ссылки.");
+        if (!ValidationUser.isValidCorrectShortUrl(shortLink)) {
+            System.out.println("Вы ввели неправильную короткую ссылку. Попробуйте ввести правильную");
+            return;
         }
 
-        if (ValidationUser.isValidClickLimit(newClicks)) {
-            System.out.println("Максимальное количество кликов валидно.");
-        } else {
+        System.out.println("Установите новое максимальное количество кликов: ");
+        int newClicks;
+        try {
+            newClicks = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Ошибка: количество кликов должно быть числом.");
+            return;
+        }
+
+        System.out.println("Введите новое время жизни ссылки в минутах: ");
+        int expiryMinutes;
+        try {
+            expiryMinutes = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Ошибка: время должно быть числом.");
+            return;
+        }
+
+        // Учитываем ограничения на лимиты кликов и времени жизни
+        if (!ValidationUser.isValidClickLimit(newClicks)) {
             System.out.println("Превышение максимально допустимого количества кликов");
             return;
         }
 
+        if (expiryMinutes <= 0) {
+            System.out.println("Время жизни должно быть положительным числом.");
+            return;
+        }
 
-
-
-
+        if (service.updateLinkParams(shortLink, userId, newClicks, expiryMinutes)) {
+            System.out.println("Параметры ссылки успешно обновлены!");
+        } else {
+            System.out.println("Не удалось обновить параметры ссылки.");
+        }
     }
 
 
@@ -159,16 +179,9 @@ public class ShortLinkController {
             System.out.println("Вы ввели неподдерживаемый ID. Введите правильный ID");
             return;
         }
-        service.changeUser(newUserId);
-        System.out.println("Пользовательский ID изменен на: " + newUserId);
+        //service.changeUser(UUID.fromString(newUserId)); //??
+        //service.changeUser(newUserId); old
+        System.out.println("Пользователь переключен на: " + newUserId);
     }
 
 }
-//https://apps.skillfactory.ru/learning/course/course-v1:SkillFactory+MIFIDEV+SEP2024/home
-// https://roadmap.sh/backend
-
-//user1 = 1d9ab7f6-de05-46b7-a0c2-e4bfe080f257
-//clck.ru/405e5e6
-
-//user2 = cee74897-2ba5-4156-b65d-d8d92ff98f59
-//clck.ru/2a1422
